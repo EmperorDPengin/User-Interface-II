@@ -283,5 +283,30 @@ footer div button{
 }
 
 @media (max-width: 500px){
-    
+    header{
+        padding: 5% 0;
+    }
+    h1{
+        font-size: 6rem;
+    }
+    nav .links{
+        margin-top: 2%;
+        flex-flow: column;
+        justify-content: center;
+    } 
+    nav .links a{
+        border: 4px solid var(--darkblack-color);
+        width: 33.3%;
+        padding: 10px;
+    }
+    .top-container div{
+        width: 100%;
+    }
+    .top-container .top-text div{
+        margin-top: 3%;
+        text-align: center;
+    }
+    .gallery-container div{
+        width: 49%;
+    }
 }
