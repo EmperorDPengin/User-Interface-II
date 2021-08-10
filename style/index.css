@@ -94,16 +94,16 @@ h1{
     font-size: 7rem;
 }
 h2{
-    font-size: 6rem;
+    font-size: 5rem;
 }
 h3{
-    font-size: 4.5rem;
+    font-size: 3.5rem;
 }
 h1, h2, h3{
     font-family: var(--roboto-font);
 }
 p{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: var(--lato-font);
 }
 a{
@@ -164,21 +164,33 @@ a{
 .top-container{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .top-container div{
-    width: 50%;
+    width: 49%;
+    margin: auto 0;
+}
+.top-container .top-image{
+    display: flex;
+    align-items: center;
 }
 .top-container .top-image img{
     width: 100%;
 }
 .top-container .top-text{
     display: flex;
-    margin-top: auto;
-    padding: 0 10% 5% 7%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 5%;
+    margin-bottom: 0;
 }
 .top-container .top-text div{
     width: 100%;
     color: var(--cleanwhite-color);
+}
+.top-container .top-text div h2{
+    max-width: 100%;
 }
 .top-container .top-text div button{
     width: 40%;
@@ -188,9 +200,6 @@ a{
     font-size: 2rem;
     font-family: var(--alegreya-font);
     color: var(--cleanwhite-color);
-}
-.top-container .top-text div p{
-    font-size: 3.5rem;
 }
 
 /* Gallery Selectors */
@@ -204,6 +213,10 @@ a{
 
 .gallery-container div{
     width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-bottom: 3%;
     color: var(--cleanwhite-color);
@@ -231,10 +244,44 @@ footer{
 footer div button{
     width: 50%;
     padding: 5%;
-    margin-top: 2%;
-    font-size: 2rem;
+    margin-top: 3%;
+    font-size: 1.8rem;
     font-weight: bold;
     font-family: var(--alegreya-font);
     color: var(--darkblack-color);
     background-color: var(--cleanwhite-color);
+}
+
+@media (max-width: 800px){
+    body{
+        line-height: 1.1;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+    header nav h1{
+        text-align: center;
+    }
+    nav .links{
+        padding: 0;
+        justify-content: center;
+    }
+    nav .links a{
+        width: 25%;
+    }
+    .top-container .top-image{
+        margin: 0;
+        align-items: flex-end;
+    }
+    .top-container .top-text{
+        padding: 0 3%;
+    }
+    .top-container .top-text div button{
+        width: 50%;
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 500px){
+    
 }
