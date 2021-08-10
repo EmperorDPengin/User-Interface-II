@@ -1,10 +1,18 @@
-/* Add CSS styling here */
+/* VARIABLES */
+:root{
+    --alegreya-font: 'Alegreya Sans SC', sans-serif;
+    --lato-font: 'Lato', sans-serif;
+    --roboto-font: 'Roboto Slab', serif;
+    --grey-color: #747474;
+    --darkblack-color: #272727;
+    --lightblack-color:#4f4f4f;
+    --cleanwhite-color: #f4f4f4;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
-   CSS Rest
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,6 +37,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+body {
+	line-height: 1;
+}
 ol, ul {
 	list-style: none;
 }
@@ -44,162 +55,186 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* Help Classes */
-.fgimg img{
-    max-width: 100%;
-    min-width: 100%;
-    max-height: 100%;
-    vertical-align: middle;
-}
-/* Global Selector */
-*{
+
+/* GLOBAL Selector */
+* {
     box-sizing: border-box; /*when i give an item a width, i want the margin to be applied with the width, no addition */
     padding: 0;
     margin: 0;
     max-width: 100%;
     max-height: 100%;
+    /* border: 1px solid grey; */
 }
-a, p{
-    font-family: 'Roboto', sans-serif;
-}
-
-/* General Selector */
 html{
     font-size: 62.5%;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    /* background-color: var(--cleanwhite-color); */
 }
 body{
     font-size: 1.6rem;
     line-height: 1.5;
-    min-height: 400px;
-    clear: both;
-    background-color: #fbfffb;
-    color: #4f4f4f;
+    width: 100%;
+    /* background-color: var(--lightblack-color); */
+    font-family: 'Open Sans', sans-serif;
+    /* border: 4px double black; */
+}
+header{
+    width: 90%;
+    margin: 0 auto;
+    /* border: 5px double black; */
+    background-color: var(--lightblack-color);
+    box-shadow: 0px 0px 3px 2px var(--grey-color);
+    border-bottom: 2px solid var(--darkblack-color);
+}
+nav {
+    width: 100%;
+    padding-left: 1%;
 }
 h1{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 5rem;
+    font-size: 7rem;
 }
 h2{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
+    font-size: 6rem;
 }
-section{
-    padding: 4% 0;
+h3{
+    font-size: 4.5rem;
+}
+h1, h2, h3{
+    font-family: var(--roboto-font);
+}
+p{
+    font-size: 2.5rem;
+    font-family: var(--lato-font);
+}
+a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-family: var(--alegreya-font);
+}
+/* Helping Class */
+.bgimg{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.one{
+    order: 1;
+}
+.two{
+    order:2;
+}
+.three{
+    order:3;
 }
 
 /* Header Selectors */
-nav{
-    padding: 2%;
-    width: 100%;
-    background-color:antiquewhite;
-    border-bottom: 2px #4f4f4f solid;
-}
-nav img{
-    width: auto;
-}
 .links{
+    padding: 0 0 1.5% 3%;
     display: flex;
-    justify-content: start;
+    justify-content: left;
+    align-items: center;
     text-align: center;
-    margin: 0 0 0 3%;
 }
 .links a{
     width: 10%;
-    border: 3px solid grey;
-    margin: 0;
-    padding: 2px 10px;
-    text-decoration: none;
-    color: crimson;
+    padding: 0.5% 0;
+    border: 1px solid var(--darkblack-color);
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    font-weight: 600;
+    background-color: var(--lightblack-color);
+    color: var(--cleanwhite-color);
 }
-/* Catcher Selectors */
-#top{
-    height: 50vh;
-    display: flex;
-    padding: 2% 2% 0 2%;
-    margin: 0 0 2% 0;
+.links a:first-child{
+    border-left-width: 5px;
+}
+.links a:last-child{
+    border-right-width: 5px;
+}
 
+/* Main Selectors */
+.main-container{
+    width: 89.5%;
+    margin: 0 auto;
+    padding: 1% 1% 0 1%;
+    border: 2px solid var(--darkblack-color);
+    background-color: var(--darkblack-color);
 }
-#top div{
+
+/* Top Selectors */
+.top-container{
+    width: 100%;
+    display: flex;
+}
+.top-container div{
     width: 50%;
 }
-.top-image{
-    text-align: center;
+.top-container .top-image img{
+    width: 100%;
 }
-.top-text{
+.top-container .top-text{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2% 0 5%;
+    margin-top: auto;
+    padding: 0 10% 5% 7%;
 }
-.top-text button{
-    margin: 3% 0;
-    width: 30%;
-    padding: 5px;
-    text-align: center;
-    border: 3px solid #4f4f4f;
-    text-decoration: none;
-    color: crimson;
+.top-container .top-text div{
+    width: 100%;
+    color: var(--cleanwhite-color);
 }
-.top-text p{
-    width: 70%;
+.top-container .top-text div button{
+    width: 40%;
+    padding: 10px 0;
+    margin: 5% 0;
+    background-color: var(--lightblack-color);
+    font-size: 2rem;
+    font-family: var(--alegreya-font);
+    color: var(--cleanwhite-color);
+}
+.top-container .top-text div p{
+    font-size: 3.5rem;
 }
 
-#gallery{
-    padding: 2% 0 0 0;
-    margin: 0 0 3% 0;
-    height: 55vh;
-}
 /* Gallery Selectors */
-.container{
+.gallery-container{
+    width: 100%;
+    padding-top: 2%;
     display: flex;
     flex-wrap: wrap;
-    padding: 0 2%;
+    justify-content: space-between;
+}
+
+.gallery-container div{
+    width: 23%;
     text-align: center;
+    margin-bottom: 3%;
+    color: var(--cleanwhite-color);
 }
-
-.container div{
-    width:21%;
-    margin: 0 2% 3% 2%;
-}
-.container img{
-    height: 80%;
-    margin: 0 0 10px 0;
-}
-
-/* Footer */
-footer{
+.gallery-container div img{
     width: 100%;
-    height: 15vh;
+    background-color: transparent;
+}
+.gallery-container div p{
+    padding: 10px 0;
+}
+
+/* Footer Selectors */
+footer{
+    width: 90%;
+    margin: 0 auto;
+    padding: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: crimson;
-    background-color: beige;
+    color: var(--cleanwhite-color);
+    background-color: var(--lightblack-color);
 }
-
-.footer-item{
+footer div button{
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    padding: 5%;
+    margin-top: 2%;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--alegreya-font);
+    color: var(--darkblack-color);
+    background-color: var(--cleanwhite-color);
 }
-
-.footer-item h2{
-    margin: 0 0 2% 0;
-}
-
-.footer-item a{
-    width: 30%;
-    border: 2px solid grey;
-    padding: 5px 15px;
-    text-decoration: none;
-    color: black;
-}
-
-
-
